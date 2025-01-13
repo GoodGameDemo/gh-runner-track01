@@ -1,0 +1,14 @@
+name: AWS CodeBuild test workflow
+on: workflow_dispatch
+
+jobs:
+  PrintEnvironmentInfo:
+    runs-on: arc-runner-demo-workshop2
+    steps:
+      - run: |
+          echo "Build Image: $CODEBUILD_BUILD_IMAGE"
+          echo "Build ID: $CODEBUILD_BUILD_ID"
+          echo "Build ARN: $CODEBUILD_BUILD_ARN"
+          echo "Project Name: $CODEBUILD_PROJECT_NAME"
+      - run: echo "::add-mask::$CUSTOM_SECRET"
+      - run: printenv
