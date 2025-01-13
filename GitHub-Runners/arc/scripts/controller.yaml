@@ -1,0 +1,30 @@
+labels:
+  app: arc-runner-demo-workshop2
+
+replicaCount: 1
+
+image:
+  repository: "ghcr.io/actions/gha-runner-scale-set-controller"
+  pullPolicy: IfNotPresent
+
+serviceAccount:
+  create: true
+  name: "actions-runner-controller" 
+
+resources:
+  limits:
+    cpu: "200m"
+    memory: "512Mi"
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+
+metrics:
+ controllerManagerAddr: ":8080"
+ listenerAddr: ":8080"
+ listenerEndpoint: "/metrics"
+
+flags:
+  logLevel: "debug"
+  logFormat: "json"
+  updateStrategy: "immediate"

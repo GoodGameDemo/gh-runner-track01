@@ -1,0 +1,45 @@
+githubConfigUrl: "https://github.com/GoodGameDemo/gh-runner-track01"
+githubConfigSecret: gh-runner-secret-pat
+
+maxRunners: 5
+minRunners: 0
+
+containerMode:
+ type: "kubernetes" 
+ kubernetesModeServiceAccount: "actions-runner-controller"
+controllerServiceAccount:
+  name: "actions-runner-controller"
+  namespace: "gh-runner-demo-workshop2"
+
+template:
+  metadata:
+    labels:
+      app: arc-runner-demo-workshop2
+  spec:
+   serviceAccountName: "actions-runner-controller"
+   containers:
+   - name: runner
+     image: ghcr.io/actions/actions-runner:latest
+     command: ["/home/runner/run.sh"]
+     env:
+       - name: ACTIONS_RUNNER_CONTAINER_HOOKS
+         value: /home/runner/k8s/index.js
+       - name: ACTIONS_RUNNER_POD_NAME
+         valueFrom:
+           fieldRef:
+             fieldPath: metadata.name
+       - name: ACTIONS_RUNNER_REQUIRE_JOB_CONTAINER
+         value: "false"
+     resources:
+       limits:
+         cpu: "1"
+         memory: "1Gi"
+       requests:
+         cpu: "150m"
+         memory: "200m"
+     volumeMounts:
+       - name: work
+         mountPath: /home/runner/_work
+   volumes:
+     - name: work
+       emptyDir: {}
