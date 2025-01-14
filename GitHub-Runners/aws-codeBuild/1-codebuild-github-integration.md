@@ -1,15 +1,5 @@
 # Exercise 1.1  Setting Up GitHub & AWS CodeBuild Integration
 
-## **What is AWS CodeBuild?**
-
-AWS CodeBuild is a fully managed continuous integration service in the cloud. CodeBuild compiles source code, runs tests, and produces packages that are ready to deploy. It eliminates the need to provision, manage, and scale your own build servers. With CodeBuild, you get:
-
-- Automatic scaling to process multiple builds concurrently.
-- Prepackaged build environments or custom environments with your own build tools.
-- Pay-as-you-go pricing by the minute.
-
----
-
 ## **Steps to Set Up CodeBuild with GitHub Integration**
 
 ### **1. Create a CodeBuild Project**
