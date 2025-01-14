@@ -32,7 +32,6 @@ jobs:
           echo "Build ID: $CODEBUILD_BUILD_ID"
           echo "Build ARN: $CODEBUILD_BUILD_ARN"
           echo "Project Name: $CODEBUILD_PROJECT_NAME"
-      - run: echo "::add-mask::$CUSTOM_SECRET"
       - run: printenv
 ```
 
