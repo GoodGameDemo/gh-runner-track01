@@ -1,4 +1,4 @@
-# Setting Up and Using ARC Runner for GitHub Actions
+# # Exercise 2.1 Setting Up and Using ARC Runner for GitHub Actions
 This guide provides step-by-step instructions on how to set up and use the Action Runner Controller (ARC) for managing self-hosted GitHub runners on Kubernetes.
 
 ## Prerequisites

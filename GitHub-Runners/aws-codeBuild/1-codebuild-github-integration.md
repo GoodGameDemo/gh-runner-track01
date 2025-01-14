@@ -1,4 +1,4 @@
-# AWS CodeBuild: Setting Up GitHub Integration
+# Exercise 1.1  Setting Up GitHub & AWS CodeBuild Integration
 
 ## **What is AWS CodeBuild?**
 

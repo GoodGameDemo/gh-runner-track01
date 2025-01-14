@@ -1,4 +1,4 @@
-# Starting a GitHub Action Workflow with ARC
+# Exercise 2.2 Starting a GitHub Action Workflow with ARC
 
 This guide explains how to start a GitHub Action workflow using the Action Runner Controller (ARC). Once your integration is set up, follow these steps to trigger workflows effectively.
 

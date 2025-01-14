@@ -1,4 +1,4 @@
-# Starting a GitHub Action Workflow with AWS CodeBuild
+# # Exercise 1.2 Starting a GitHub Action Workflow with AWS CodeBuild
 
 This guide explains how to start a GitHub Action workflow using AWS CodeBuild. Once your integration is set up, follow these steps to trigger workflows effectively.
 
